@@ -1,0 +1,26 @@
+@import url(Header.css);
+@import url(MainSection.css);
+@import url(ActivateButton.css);
+@import url(ResultsDisplay.css);
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins";
+  font-weight: 300;
+  --primary1: #fabc3f;
+  --primary2: rgba(0, 0, 255, 0.2);
+}
+
+#MainContainer {
+  display: grid;
+  grid-template-rows: auto minmax(2.5rem, 1fr) auto;
+  grid-template-columns: 100%;
+  min-height: 1rem;
+}
+
+#container2 {
+  display: grid;
+  grid-template-rows: auto minmax(20rem, 1fr) auto;
+  grid-template-columns: 100%;
+  min-height: 100vh;
+}
