@@ -1,5 +1,5 @@
 import { log } from "console";
-import React from "react";
+import React, { useState } from "react";
 
 const exampleDataArray = [
   {
@@ -19,14 +19,19 @@ const exampleDataArray = [
 ];
 
 function ResultsDisplay() {
+  const [showResults, setShowResult] = useState(true);
   const arrayExampleData = exampleDataArray.map((data) => {
     return (
-      <ul className="item" key={data.Item}>
-        <h2>{data.Item}</h2>
-        <li>
-          <h3>{data.Supplier}</h3>
-        </li>
-      </ul>
+      <div>
+        {showResults && (
+          <ul className="item" key={data.Item}>
+            <h2>{data.Item}</h2>
+            <li>
+              <h3>{data.Supplier}</h3>
+            </li>
+          </ul>
+        )}
+      </div>
     );
   });
   return <div className="ResultsDisplay">{arrayExampleData}</div>;

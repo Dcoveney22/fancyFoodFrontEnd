@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ButtonIcon from "../icons/ButtonIcon";
 import ResultsDisplay from "./ResultsDisplay";
 
