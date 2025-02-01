@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import ButtonIcon from "../icons/ButtonIcon";
 import ResultsDisplay from "./ResultsDisplay";
+import ActivateButton from "./ActivateButton";
 
-function MainSection({ mainBody }: { mainBody: () => void }) {
+function MainSection() {
+  const [showResults, setShowResult] = useState(false);
   return (
     <div id="mainSection">
-      <ResultsDisplay />
+      <ResultsDisplay shouldShowResults={showResults} />
+      <ActivateButton changeState={setShowResult} currentState={showResults} />
     </div>
   );
 }

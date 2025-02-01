@@ -1,5 +1,6 @@
 import { log } from "console";
 import React, { useState } from "react";
+import ButtonIcon from "../icons/ButtonIcon";
 
 const exampleDataArray = [
   {
@@ -18,23 +19,27 @@ const exampleDataArray = [
   },
 ];
 
-function ResultsDisplay() {
-  const [showResults, setShowResult] = useState(true);
-  const arrayExampleData = exampleDataArray.map((data) => {
-    return (
-      <div>
-        {showResults && (
-          <ul className="item" key={data.Item}>
-            <h2>{data.Item}</h2>
-            <li>
-              <h3>{data.Supplier}</h3>
-            </li>
-          </ul>
-        )}
-      </div>
-    );
-  });
-  return <div className="ResultsDisplay">{arrayExampleData}</div>;
+function ResultsDisplay(props: { shouldShowResults: boolean }) {
+  // const [showResults, setShowResult] = useState(true);
+  return (
+    <div className="ResultsDisplay">
+      {exampleDataArray.map((data) => {
+        return (
+          <div>
+            {props.shouldShowResults && (
+              //other component?
+              <ul className="item" key={data.Item}>
+                <h2>{data.Item}</h2>
+                <li>
+                  <h3>{data.Supplier}</h3>
+                </li>
+              </ul>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default ResultsDisplay;

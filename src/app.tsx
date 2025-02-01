@@ -1,26 +1,18 @@
-import React from "react";
 import Header from "./components/Header";
 import MainSection from "./components/MainSection";
-import ActivateButton from "./components/ActivateButton";
+
 import "./styles/App.css";
-import { useState } from "react";
+
 import Footer from "./components/Footer";
 
 function App() {
-  function logoAndBrand(): void {
-    throw new Error("Function not implemented.");
-  }
-
   return (
     <div id="MainContainer">
-      <Header logoAndBrand={logoAndBrand} />
+      <Header />
       <br />
       <>
-        <MainSection mainBody={function (): void {}} />
+        <MainSection />
       </>
-      <div id="ActivateButton">
-        <ActivateButton button={function (): void {}} />
-      </div>
 
       <Footer />
     </div>
@@ -28,3 +20,10 @@ function App() {
 }
 
 export default App;
+
+// App.get
+// express API which holds the data I have Header
+// Activating the button requests the data from the API
+
+// 1. First focus on the get request
+// 2. check boarding pass app for get the data

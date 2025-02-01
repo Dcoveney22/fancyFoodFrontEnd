@@ -1,7 +1,7 @@
 import React from "react";
 import CompanyLogo from "./CompanyLogo";
 
-function Header({ logoAndBrand }: { logoAndBrand: () => void }) {
+function Header() {
   return (
     <div id="header">
       <CompanyLogo />

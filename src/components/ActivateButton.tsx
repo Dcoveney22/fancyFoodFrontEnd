@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import ButtonIcon from "../icons/ButtonIcon";
 import ResultsDisplay from "./ResultsDisplay";
 
-function ActivateButton({}: { button: () => void }) {
+function ActivateButton(props: {
+  changeState: React.Dispatch<React.SetStateAction<boolean>>;
+  currentState: boolean;
+}) {
   return (
-    <div className="ActivateButton" onClick={ResultsDisplay}>
+    <button
+      className="ActivateButton"
+      onClick={() => props.changeState(!props.currentState)}
+    >
       <ButtonIcon />
-      <p>ACTIVATE</p>
-    </div>
+      ACTIVATE
+    </button>
   );
 }
 
