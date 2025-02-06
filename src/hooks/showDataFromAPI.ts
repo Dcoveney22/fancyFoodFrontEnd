@@ -1,14 +1,14 @@
 // hook to show data from API
 import { useQuery } from "@tanstack/react-query";
-import { Product } from "../types";
+import { Product } from ".../types.ts";
 
 export default function showDataFromAPI() {
-  const baseURL = import.meta.env.VITE_BASE_URL;
+  // const baseURL = import.meta.env.VITE_BASE_URL;
 
   return useQuery({
     queryKey: ["fancyFoodData"],
     queryFn: async () => {
-      const response = await fetch(`${baseURL}/dataResults`);
+      const response = await fetch(`http://localhost:3000/dataResults`);
       let data = await response.json();
       console.log(data);
 
@@ -19,3 +19,4 @@ export default function showDataFromAPI() {
     },
   });
 }
+showDataFromAPI();
